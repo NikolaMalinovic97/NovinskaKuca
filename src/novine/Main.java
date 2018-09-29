@@ -10,7 +10,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		//Deklaracija i inicijalizacija fajlova potrebnih za cuvanje podataka
+		/*//Deklaracija i inicijalizacija fajlova potrebnih za cuvanje podataka
 		File fileIzdanja = new File("Izdanja.txt");
 		File filePretplatnici = new File("Pretplatnici.txt");
 		File filePretplate = new File("Pretplate.txt");
@@ -83,10 +83,11 @@ public class Main {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 		
 		
-		
+		//GUI
+		Frejm f = new Frejm();
 	}
 
 
