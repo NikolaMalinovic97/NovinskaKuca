@@ -1,6 +1,10 @@
 package novine;
 
-public class Pretplata {
+import java.io.Serializable;
+
+public class Pretplata implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	Pretplatnik pretplatnik;
 	Izdanje izdanje;

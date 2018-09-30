@@ -88,6 +88,7 @@ public class Main {
 		
 		//GUI
 		Frejm f = new Frejm();
+		
 	}
 
 

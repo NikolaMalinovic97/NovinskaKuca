@@ -1,7 +1,11 @@
 package novine;
 
-public class Pretplatnik {
+import java.io.Serializable;
 
+public class Pretplatnik implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	
 	String ime;
 	String prezime;
 	String adresa;
