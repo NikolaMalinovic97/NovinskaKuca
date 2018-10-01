@@ -2,6 +2,7 @@ package novine;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.*;
 
@@ -9,8 +10,17 @@ public class Frejm extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	
-	public Frejm() {
+	ArrayList<Izdanje> listaIzdanja;
+	ArrayList<Pretplatnik> listaPretplatnika;
+	ArrayList<Pretplata> listaPretplata;
+	
+	public Frejm(ArrayList<Izdanje> listaIzdanja, ArrayList<Pretplatnik> listaPretplatnika, ArrayList<Pretplata> listaPretplata) {
 		super("Novinska kuca");
+		
+		this.listaIzdanja = listaIzdanja;
+		this.listaPretplatnika = listaPretplatnika;
+		this.listaPretplata = listaPretplata;
+		
 		setVisible(true);
 		setResizable(false);
 		getContentPane().setLayout(null);
@@ -68,7 +78,7 @@ public class Frejm extends JFrame {
 		//Action listener za unos izdanja
 		unosIzdanja.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new IzdanjeFrejm();
+				new IzdanjeFrejm(listaIzdanja);
 			}
 		});
 		

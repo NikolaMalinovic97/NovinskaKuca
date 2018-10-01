@@ -10,7 +10,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		/*//Deklaracija i inicijalizacija fajlova potrebnih za cuvanje podataka
+		//Deklaracija i inicijalizacija fajlova potrebnih za cuvanje podataka
 		File fileIzdanja = new File("Izdanja.txt");
 		File filePretplatnici = new File("Pretplatnici.txt");
 		File filePretplate = new File("Pretplate.txt");
@@ -28,7 +28,7 @@ public class Main {
 		ArrayList<Pretplata> listaPretplata = new ArrayList<>();
 		
 		
-		//Deklaracija i inicijalizacija ObjectInputStream-a, i ucitavanje objekata if file-ova
+		/*//Deklaracija i inicijalizacija ObjectInputStream-a, i ucitavanje objekata if file-ova
 		ObjectInputStream oisIzdanje = null;
 		ObjectInputStream oisPretplatnik = null;
 		ObjectInputStream oisPretplata = null;
@@ -87,7 +87,7 @@ public class Main {
 		
 		
 		//GUI
-		Frejm f = new Frejm();
+		new Frejm(listaIzdanja, listaPretplatnika, listaPretplata);
 		
 	}
 
