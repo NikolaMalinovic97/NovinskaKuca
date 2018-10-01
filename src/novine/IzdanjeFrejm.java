@@ -105,6 +105,7 @@ public class IzdanjeFrejm extends JFrame {
 						System.out.println("Podaci se ne mogu upisati u fajl!");
 					}
 					jtfIme.setText(null);
+					jtfCijena.setText(null);
 					JOptionPane.showMessageDialog(null,
 						    "Podaci su uspjesno sacuvani.",
 						    "Message",

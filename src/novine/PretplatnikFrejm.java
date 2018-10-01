@@ -97,6 +97,9 @@ public class PretplatnikFrejm extends JFrame {
 						System.out.println("Podaci se ne mogu upisati u fajl!");
 					}
 					jtfIme.setText(null);
+					jtfPrezime.setText(null);
+					jtfAdresa.setText(null);
+					jtfTelefon.setText(null);
 					JOptionPane.showMessageDialog(null,
 						    "Podaci su uspjesno sacuvani.",
 						    "Message",

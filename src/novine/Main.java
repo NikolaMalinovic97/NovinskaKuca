@@ -31,7 +31,7 @@ public class Main {
 		
 		//Deklaracija i inicijalizacija ObjectInputStream-a, i ucitavanje objekata if file-ova
 		ObjectInputStream oisIzdanje = null;
-		//ObjectInputStream oisPretplatnik = null;
+		ObjectInputStream oisPretplatnik = null;
 		//ObjectInputStream oisPretplata = null;
 		try {
 			oisIzdanje = new ObjectInputStream(new FileInputStream(fileIzdanja));
@@ -43,18 +43,17 @@ public class Main {
 		} catch (ClassNotFoundException e) {
 			System.out.println("Nije pronadjena klasa!");
 		}
-		/*try {
+		try {
 			oisPretplatnik = new ObjectInputStream(new FileInputStream(filePretplatnici));
 			Pretplatnik p1 = null;
 			while ((p1 = (Pretplatnik) oisPretplatnik.readObject()) != null){
 				listaPretplatnika.add(p1);
 			}
 		} catch (IOException e) {
-			System.out.println("Greska prilikom instanciranja ObjectInputStream-a!");
 		} catch (ClassNotFoundException e) {
 			System.out.println("Nije pronadjena klasa!");
 		}
-		try {
+		/*try {
 			oisPretplata = new ObjectInputStream(new FileInputStream(filePretplate));
 			Pretplata p2 = null;
 			while ((p2 = (Pretplata) oisPretplata.readObject()) != null){
@@ -72,13 +71,13 @@ public class Main {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		/*try {
+		try {
 			oisPretplatnik.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		try {
+		/*try {
 			oisPretplata.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
