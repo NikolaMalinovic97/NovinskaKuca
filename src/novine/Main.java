@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public class Main {
 
+	
 	public static void main(String[] args) {
 		
 		//Deklaracija i inicijalizacija fajlova potrebnih za cuvanje podataka
@@ -28,10 +29,10 @@ public class Main {
 		ArrayList<Pretplata> listaPretplata = new ArrayList<>();
 		
 		
-		/*//Deklaracija i inicijalizacija ObjectInputStream-a, i ucitavanje objekata if file-ova
+		//Deklaracija i inicijalizacija ObjectInputStream-a, i ucitavanje objekata if file-ova
 		ObjectInputStream oisIzdanje = null;
-		ObjectInputStream oisPretplatnik = null;
-		ObjectInputStream oisPretplata = null;
+		//ObjectInputStream oisPretplatnik = null;
+		//ObjectInputStream oisPretplata = null;
 		try {
 			oisIzdanje = new ObjectInputStream(new FileInputStream(fileIzdanja));
 			Izdanje i = null;
@@ -39,11 +40,10 @@ public class Main {
 				listaIzdanja.add(i);
 			}
 		} catch (IOException e) {
-			System.out.println("Greska prilikom instanciranja ObjectInputStream-a!");
 		} catch (ClassNotFoundException e) {
 			System.out.println("Nije pronadjena klasa!");
 		}
-		try {
+		/*try {
 			oisPretplatnik = new ObjectInputStream(new FileInputStream(filePretplatnici));
 			Pretplatnik p1 = null;
 			while ((p1 = (Pretplatnik) oisPretplatnik.readObject()) != null){
@@ -64,7 +64,7 @@ public class Main {
 			System.out.println("Greska prilikom instanciranja ObjectInputStream-a!");
 		} catch (ClassNotFoundException e) {
 			System.out.println("Nije pronadjena klasa!");
-		}
+		}*/
 		//Zatvaranje ois objekata
 		try {
 			oisIzdanje.close();
@@ -72,7 +72,7 @@ public class Main {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		try {
+		/*try {
 			oisPretplatnik.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

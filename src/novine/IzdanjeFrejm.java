@@ -51,11 +51,11 @@ public class IzdanjeFrejm extends JFrame {
 		//Pozicioniranje komponenti
 		jlIme.setBounds(40, 40, 40, 20);
 		jlTip.setBounds(40, 80, 40, 20);
-		jlCijena.setBounds(40, 120, 40, 20);
+		jlCijena.setBounds(40, 120, 60, 20);
 		jtfIme.setBounds(90, 40, 170, 20);
 		jcbTip.setBounds(90, 80, 170, 20);
 		jtfCijena.setBounds(90, 120, 170, 20);
-		jbUnesi.setBounds(60, 180, 180, 50);
+		jbUnesi.setBounds(60, 200, 180, 50);
 		
 		//Dodavanje komponenti
 		add(jlIme);
@@ -104,6 +104,7 @@ public class IzdanjeFrejm extends JFrame {
 					} catch (IOException e2) {
 						System.out.println("Podaci se ne mogu upisati u fajl!");
 					}
+					jtfIme.setText(null);
 					JOptionPane.showMessageDialog(null,
 						    "Podaci su uspjesno sacuvani.",
 						    "Message",

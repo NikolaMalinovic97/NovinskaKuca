@@ -85,7 +85,7 @@ public class Frejm extends JFrame {
 		//Action listener za unos pretplatnika
 		unosPretplatnika.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new PretplatnikFrejm();
+				new PretplatnikFrejm(listaPretplatnika);
 			}
 		});
 		
