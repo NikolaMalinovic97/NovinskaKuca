@@ -46,6 +46,57 @@ public class ListaSvihPretplatnikaSortiranaPoPrezimenuIliPoDugovanju extends JFr
 		
 		
 		//Action listener za dugme "Po prezimenu"
+		jbPrezime.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//Sortiranje
+				String zamjenaIme;
+				String zamjenaPrezime;
+				String zamjenaAdresa;
+				String zamjenaTelefon;
+				double zamjenaSaldo;
+				for (int j = 0; j < listaPretplatnika.size() - 1; j++) {
+					for (int i = 0; i < listaPretplatnika.size() - 1; i++) {
+						for (int k = 0; k < 4; k++) {
+							if(listaPretplatnika.get(i).prezime.charAt(k) != listaPretplatnika.get(i + 1).prezime.charAt(k)) {
+								if(listaPretplatnika.get(i).prezime.charAt(k) < listaPretplatnika.get(i + 1).prezime.charAt(k)) {
+									zamjenaIme = listaPretplatnika.get(i).ime;
+									zamjenaPrezime = listaPretplatnika.get(i).prezime;
+									zamjenaAdresa = listaPretplatnika.get(i).adresa;
+									zamjenaTelefon = listaPretplatnika.get(i).brojTelefona;
+									zamjenaSaldo = listaPretplatnika.get(i).saldo;
+									listaPretplatnika.get(i).ime = listaPretplatnika.get(i + 1).ime;
+									listaPretplatnika.get(i).prezime = listaPretplatnika.get(i + 1).prezime;
+									listaPretplatnika.get(i).adresa = listaPretplatnika.get(i + 1).adresa;
+									listaPretplatnika.get(i).brojTelefona = listaPretplatnika.get(i + 1).brojTelefona;
+									listaPretplatnika.get(i).saldo = listaPretplatnika.get(i + 1).saldo;
+									listaPretplatnika.get(i + 1).ime = zamjenaIme;
+									listaPretplatnika.get(i + 1).prezime = zamjenaPrezime;
+									listaPretplatnika.get(i + 1).adresa = zamjenaAdresa;
+									listaPretplatnika.get(i + 1).brojTelefona = zamjenaTelefon;
+									listaPretplatnika.get(i + 1).saldo = zamjenaSaldo;
+								}
+								break;
+							}
+						}
+										
+						
+					}
+				}
+				//Dodavanje u listu
+				dlm.clear();
+				for (int i = listaPretplatnika.size() - 1; i >= 0; i--) {
+					str = "";
+					str += "IME: " + listaPretplatnika.get(i).ime;
+					str += " | PREZIME: " + listaPretplatnika.get(i).prezime;
+					str += " | ADRESA: " + listaPretplatnika.get(i).adresa;
+					str += " | TELEFON: " + listaPretplatnika.get(i).brojTelefona;
+					str += " | SALDO: " + listaPretplatnika.get(i).saldo;
+					dlm.addElement(str);
+				}
+				
+			}
+		});
+		
 		
 		//Action listener za dugme "Po prezimenu"
 		jbDugovanje.addActionListener(new ActionListener() {
@@ -77,7 +128,6 @@ public class ListaSvihPretplatnikaSortiranaPoPrezimenuIliPoDugovanju extends JFr
 						}
 					}
 				}
-				
 				//Dodavanje u listu
 				dlm.clear();
 				for (int i = listaPretplatnika.size() - 1; i >= 0; i--) {
