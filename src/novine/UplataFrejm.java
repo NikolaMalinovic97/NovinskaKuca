@@ -73,17 +73,23 @@ public class UplataFrejm extends JFrame {
 					JOptionPane.showMessageDialog(null, "Morate unijeti sva polja!", "Warning",
 							JOptionPane.WARNING_MESSAGE);
 					ispravno = false;
-				} else {
+				} else if(! postojiPretplatnik(ime, prezime)) {
+					JOptionPane.showMessageDialog(null, "Pretplatnik kojeg ste unijeli ne postoji!", "Warning",
+							JOptionPane.WARNING_MESSAGE);
+					ispravno = false;
+				} else if(ispravno) {
 					try {
 						iznosUplate = Double.parseDouble(jtfIznos.getText());
 					} catch (NumberFormatException e2) {
 						JOptionPane.showMessageDialog(null,
-							    "Cijena mora da sadrzi brojcanu vrijednost!",
+							    "Iznos mora da sadrzi brojcanu vrijednost!",
 							    "Warning",
 							    JOptionPane.WARNING_MESSAGE);
 						ispravno = false;
 					}
 				} 
+					
+					
 				//Smjerstanje podataka u fajl ako su ispravno unijeti
 				if(ispravno) {
 					dodajSaldo();
@@ -109,6 +115,14 @@ public class UplataFrejm extends JFrame {
 
 			}
 		});
+	}
+	
+	public boolean postojiPretplatnik(String ime, String prezime) {
+		for (int i = 0; i < listaPretplatnika.size(); i++) {
+			if (listaPretplatnika.get(i).ime.equals(ime) && listaPretplatnika.get(i).prezime.equals(prezime))
+				return true;
+		}
+		return false;
 	}
 	
 	public void dodajSaldo() {

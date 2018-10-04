@@ -102,6 +102,30 @@ public class Frejm extends JFrame {
 				new UplataFrejm(listaPretplatnika);
 			}
 		});
+		
+		//Action listener za lsitanje svih pretplatnika za odredjeno izdanje
+		
+		//Action listener za lsitanje svih pretplata za odredjenog pretplatnika
+		
+		//Action listener za saldo jednog pretplatnika
+		saldoJednogPretplatnika.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new SaldoJednogPretplatnikaFrejm(listaPretplatnika);
+			}
+		});
+		
+		//Action listener za listu svih pretplatnika sortiranih po prezimenu ili po dugovanju
+		listaSvihPretplatnikaSortiranaPoPrezimenuIliPoDugovanju.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new ListaSvihPretplatnikaSortiranaPoPrezimenuIliPoDugovanju(listaPretplatnika);
+			}
+		});
+		
+		//Action listener za listanje svih izdanja sortiranih po nazivu ili cijeni
+		
+		//Action listener za listanje samo odredjenog tipa izdanja
+		
+		//Action listener za spisak sa kompletnim podacima za jedno izabrano izdanje
 	}
 	
 	

@@ -84,6 +84,7 @@ public class Main {
 		}
 		
 		
+		
 		//GUI
 		new Frejm(listaIzdanja, listaPretplatnika, listaPretplata);
 		
@@ -99,6 +100,5 @@ public class Main {
 			}
 		}
 	}
-	
 	
 }
