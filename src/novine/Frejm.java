@@ -10,16 +10,16 @@ public class Frejm extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	
-	ArrayList<Izdanje> listaIzdanja;
-	ArrayList<Pretplatnik> listaPretplatnika;
-	ArrayList<Pretplata> listaPretplata;
+	static ArrayList<Izdanje> listaIzdanja;
+	static ArrayList<Pretplatnik> listaPretplatnika;
+	static ArrayList<Pretplata> listaPretplata;
 	
 	public Frejm(ArrayList<Izdanje> listaIzdanja, ArrayList<Pretplatnik> listaPretplatnika, ArrayList<Pretplata> listaPretplata) {
 		super("Novinska kuca");
 		
-		this.listaIzdanja = listaIzdanja;
-		this.listaPretplatnika = listaPretplatnika;
-		this.listaPretplata = listaPretplata;
+		Frejm.listaIzdanja = listaIzdanja;
+		Frejm.listaPretplatnika = listaPretplatnika;
+		Frejm.listaPretplata = listaPretplata;
 		
 		setVisible(true);
 		setResizable(false);
@@ -92,9 +92,24 @@ public class Frejm extends JFrame {
 		//Action listener za unos pretplatnika
 		unosPretplate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new PretplataFrejm();
+				new PretplataFrejm(listaIzdanja, listaPretplatnika, listaPretplata);
 			}
 		});
+	}
+	
+	
+	
+	//SETERI
+	public static void setListaIzdanja(ArrayList<Izdanje> listaIzdanja) {
+		Frejm.listaIzdanja = listaIzdanja;
+	}
+
+	public static void setListaPretplatnika(ArrayList<Pretplatnik> listaPretplatnika) {
+		Frejm.listaPretplatnika = listaPretplatnika;
+	}
+
+	public static void setListaPretplata(ArrayList<Pretplata> listaPretplata) {
+		Frejm.listaPretplata = listaPretplata;
 	}
 
 }

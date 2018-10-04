@@ -106,6 +106,7 @@ public class IzdanjeFrejm extends JFrame {
 					}
 					jtfIme.setText(null);
 					jtfCijena.setText(null);
+					Frejm.setListaIzdanja(listaIzdanja);
 					JOptionPane.showMessageDialog(null,
 						    "Podaci su uspjesno sacuvani.",
 						    "Message",

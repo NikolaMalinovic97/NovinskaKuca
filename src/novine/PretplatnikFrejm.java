@@ -100,6 +100,7 @@ public class PretplatnikFrejm extends JFrame {
 					jtfPrezime.setText(null);
 					jtfAdresa.setText(null);
 					jtfTelefon.setText(null);
+					Frejm.setListaPretplatnika(listaPretplatnika);
 					JOptionPane.showMessageDialog(null,
 						    "Podaci su uspjesno sacuvani.",
 						    "Message",
