@@ -60,7 +60,6 @@ public class Main {
 				listaPretplata.add(p2);
 			}
 		} catch (IOException e) {
-			System.out.println("Greska prilikom instanciranja ObjectInputStream-a!");
 		} catch (ClassNotFoundException e) {
 			System.out.println("Nije pronadjena klasa!");
 		}

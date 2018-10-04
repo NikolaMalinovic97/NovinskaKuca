@@ -10,12 +10,14 @@ public class Pretplatnik implements Serializable {
 	String prezime;
 	String adresa;
 	String brojTelefona;
+	double saldo;
 	
 	public Pretplatnik(String ime, String prezime, String adresa, String brojTelefona) {
 		this.ime = ime;
 		this.prezime = prezime;
 		this.adresa = adresa;
 		this.brojTelefona = brojTelefona;
+		this.saldo = 0;
 	}
 	
 	

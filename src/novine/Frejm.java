@@ -95,6 +95,13 @@ public class Frejm extends JFrame {
 				new PretplataFrejm(listaIzdanja, listaPretplatnika, listaPretplata);
 			}
 		});
+		
+		//Action listener za unos uplate
+		unosUplate.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new UplataFrejm(listaPretplatnika);
+			}
+		});
 	}
 	
 	

@@ -102,6 +102,7 @@ public class PretplataFrejm extends JFrame {
 					JOptionPane.showMessageDialog(null, "Pretplatnik kojeg ste unijeli ne postoji!", "Warning",
 							JOptionPane.WARNING_MESSAGE);
 				} else {
+					oduzmiSaldo();
 					listaPretplata.add(new Pretplata(unesiPretplatnika(imePretplatnika, prezimePretplatnika), unesiIzdanje(imeIzdanja), godinaPretplate, brojNarucenihPrimjeraka));
 					// Unos liste u fajl
 					ObjectOutputStream ousPretplata = null;
@@ -115,11 +116,23 @@ public class PretplataFrejm extends JFrame {
 					} catch (IOException e2) {
 						System.out.println("Podaci se ne mogu upisati u fajl!");
 					}
+					ObjectOutputStream ousPretplatnik = null;
+					try {
+						ousPretplatnik = new ObjectOutputStream(new FileOutputStream(new File("Pretplatnici.txt")));
+						for (int i = 0; i < listaPretplatnika.size(); i++) {
+							ousPretplatnik.writeObject(listaPretplatnika.get(i));
+						}
+					} catch (FileNotFoundException e1) {
+						System.out.println("Fajl ne postoji!");
+					} catch (IOException e2) {
+						System.out.println("Podaci se ne mogu upisati u fajl!");
+					}
 					jtfImePretplatnika.setText(null);
 					jtfPrezimePretplatnika.setText(null);
 					jtfImeIzdanja.setText(null);
 					jtfGodinaPretplate.setText(null);
 					jtfBrojPrimjeraka.setText(null);
+					Frejm.setListaPretplata(listaPretplata);
 					Frejm.setListaPretplatnika(listaPretplatnika);
 					JOptionPane.showMessageDialog(null, "Podaci su uspjesno sacuvani.", "Message",
 							JOptionPane.PLAIN_MESSAGE);
@@ -165,5 +178,23 @@ public class PretplataFrejm extends JFrame {
 			}
 		}
 		return p;
+	}
+	
+	public void oduzmiSaldo() {
+		int indeksPretplatnika = 0;
+		int indeksIzdanja = 0;
+		for (int j = 0; j < listaPretplatnika.size(); j++) {
+			if(listaPretplatnika.get(j).ime.equals(imePretplatnika) && listaPretplatnika.get(j).prezime.equals(prezimePretplatnika)) {
+				indeksPretplatnika = j;
+				break;
+			}
+		}
+		for (int j = 0; j < listaIzdanja.size(); j++) {
+			if(listaIzdanja.get(j).imeIzdanja.equals(imeIzdanja)) {
+				indeksIzdanja = j;
+				break;
+			}
+		}
+		listaPretplatnika.get(indeksPretplatnika).saldo -= brojNarucenihPrimjeraka * listaIzdanja.get(indeksIzdanja).cijenaPrimjerka;
 	}
 }
