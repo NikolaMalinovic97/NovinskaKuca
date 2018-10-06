@@ -122,8 +122,18 @@ public class Frejm extends JFrame {
 		});
 		
 		//Action listener za listanje svih izdanja sortiranih po nazivu ili cijeni
-		
+		listanjeSvihIzdanjaSortiranihPoNazivuIliCeni.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new ListanjeSvihIzdanjaSortiranihPoNazivuIliCijeni(listaIzdanja);
+			}
+		});
+
 		//Action listener za listanje samo odredjenog tipa izdanja
+		listanjeSamoOdredjenogTipaIzdanja.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new ListanjeSamoOdredjenogTipaIzdanja(listaIzdanja);
+			}
+		});
 		
 		//Action listener za spisak sa kompletnim podacima za jedno izabrano izdanje
 	}

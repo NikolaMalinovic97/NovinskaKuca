@@ -17,7 +17,7 @@ public class ListaSvihPretplatnikaSortiranaPoPrezimenuIliPoDugovanju extends JFr
 	String str;
 	
 	public ListaSvihPretplatnikaSortiranaPoPrezimenuIliPoDugovanju(ArrayList<Pretplatnik> listaPretplatnika) {
-		super("Unos pretplatnika");
+		super("Lista pretplatnika");
 
 		DefaultListModel<String> dlm = new DefaultListModel<String>();
 		
