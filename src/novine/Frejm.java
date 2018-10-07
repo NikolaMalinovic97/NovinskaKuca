@@ -103,9 +103,19 @@ public class Frejm extends JFrame {
 			}
 		});
 		
-		//Action listener za lsitanje svih pretplatnika za odredjeno izdanje
+		//Action listener za listanje svih pretplatnika za odredjeno izdanje
+		listanjeSvihPretplatnikaZaOdredjenoIzdanje.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new ListanjeSvihPretplatnikaZaOdredjenoIzdanje(listaPretplata);
+			}
+		});
 		
-		//Action listener za lsitanje svih pretplata za odredjenog pretplatnika
+		//Action listener za listanje svih pretplata za odredjenog pretplatnika
+		listanjeSvihPretplataZaOdredjenogPretplatnika.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new ListanjeSvihPretplataZaOdredjenogPretplatnika(listaPretplata);
+			}
+		});
 		
 		//Action listener za saldo jednog pretplatnika
 		saldoJednogPretplatnika.addActionListener(new ActionListener() {
