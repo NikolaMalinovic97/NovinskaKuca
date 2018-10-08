@@ -34,7 +34,7 @@ public class Frejm extends JFrame {
 		JButton unosPretplate = new JButton("Unos pretplate");
 		JButton unosUplate = new JButton("Unos uplate");
 		JLabel spisak = new JLabel("SPISAK");
-		JButton spiskSaKompletnimPodacimaZaJednoIzabranoIzdanje = new JButton("Spisak sa kompletnim podacima za jedno izabrano izdanje");
+		JButton spisakSaKompletnimPodacimaZaJednoIzabranoIzdanje = new JButton("Spisak sa kompletnim podacima za jedno izabrano izdanje");
 		JLabel listanje = new JLabel("LISTANJE");
 		JButton listanjeSvihPretplatnikaZaOdredjenoIzdanje = new JButton("Listanje svih pretplatnika za odredjeno izdanje");
 		JButton listanjeSvihPretplataZaOdredjenogPretplatnika = new JButton("Listanje svih pretplata za odredjenog pretplatnika");
@@ -50,7 +50,7 @@ public class Frejm extends JFrame {
 		unosPretplate.setBounds(80, 240, 200, 40);
 		unosUplate.setBounds(80, 300, 200, 40);
 		spisak.setBounds(250, 380, 60, 40);
-		spiskSaKompletnimPodacimaZaJednoIzabranoIzdanje.setBounds(80, 420, 400, 40);
+		spisakSaKompletnimPodacimaZaJednoIzabranoIzdanje.setBounds(80, 420, 400, 40);
 		listanje.setBounds(695, 40, 60, 50);
 		listanjeSvihPretplatnikaZaOdredjenoIzdanje.setBounds(520, 120, 400, 40);
 		listanjeSvihPretplataZaOdredjenogPretplatnika.setBounds(520, 180, 400, 40);
@@ -66,7 +66,7 @@ public class Frejm extends JFrame {
 		add(unosPretplate);
 		add(unosUplate);
 		add(spisak);
-		add(spiskSaKompletnimPodacimaZaJednoIzabranoIzdanje);
+		add(spisakSaKompletnimPodacimaZaJednoIzabranoIzdanje);
 		add(listanje);
 		add(listanjeSvihPretplatnikaZaOdredjenoIzdanje);
 		add(listanjeSvihPretplataZaOdredjenogPretplatnika);
@@ -146,6 +146,11 @@ public class Frejm extends JFrame {
 		});
 		
 		//Action listener za spisak sa kompletnim podacima za jedno izabrano izdanje
+		spisakSaKompletnimPodacimaZaJednoIzabranoIzdanje.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new Spisak(listaIzdanja, listaPretplata);
+			}
+		});
 	}
 	
 	
